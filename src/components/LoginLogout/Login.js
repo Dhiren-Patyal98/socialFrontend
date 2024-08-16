@@ -13,7 +13,7 @@ export default function Login() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      navigate("/profile");
+      navigate("/navbar");
     }
   }, [navigate]);
 
@@ -30,7 +30,7 @@ export default function Login() {
       if (response.data.success) {
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("userId", response.data.data._id);
-        navigate("/profile");
+        navigate("/navbar");
       } else {
         setError(response.data.msg);
       }

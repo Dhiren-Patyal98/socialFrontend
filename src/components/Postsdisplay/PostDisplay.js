@@ -8,7 +8,7 @@ const PostDisplay = () => {
   const [users, setUsers] = useState([]);
   const [likedPosts, setLikedPosts] = useState({});
 
-  // Toggle the like state for a specific post
+ 
   const handleClick = (postId) => {
     setLikedPosts(prevLikedPosts => ({
       ...prevLikedPosts,
@@ -24,7 +24,7 @@ const PostDisplay = () => {
         );
         const fetchedPosts = postsResponse.data;
 
-        // Sort posts by creation date in descending order
+        
         const sortedPosts = fetchedPosts.sort(
           (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
@@ -46,7 +46,7 @@ const PostDisplay = () => {
     return users.find((user) => user._id === userId);
   };
 
-  // Format date for display
+  
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     return new Date(dateString).toLocaleDateString('en-US', options);

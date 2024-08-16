@@ -10,7 +10,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Redirect to profile if already logged in
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       navigate("/profile");
@@ -30,7 +30,7 @@ export default function Login() {
       if (response.data.success) {
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("userId", response.data.data._id);
-        navigate("/profile"); // Redirect to profile after login
+        navigate("/profile");
       } else {
         setError(response.data.msg);
       }

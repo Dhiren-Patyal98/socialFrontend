@@ -3,11 +3,11 @@ import './post.css';
 
 const Post = () => {
     const [comment, setComment] = useState('');
-    const [image, setImage] = useState(null); // Initialize as null
-    const [successMessage, setSuccessMessage] = useState(''); // For user feedback
+    const [image, setImage] = useState(null); 
+    const [successMessage, setSuccessMessage] = useState(''); 
 
     const userid = localStorage.getItem('userId') || '';
-    const fileInputRef = useRef(null); // Create a ref for the file input
+    const fileInputRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -27,20 +27,20 @@ const Post = () => {
 
             const result = await response.json();
             if (response.ok) {
-                setSuccessMessage('Post created successfully!'); // Set success message
-                // Clear form fields
+                setSuccessMessage('Post created successfully!');
+                
                 setComment('');
                 setImage(null);
                 if (fileInputRef.current) {
-                    fileInputRef.current.value = ''; // Reset file input
+                    fileInputRef.current.value = ''; 
                 }
             } else {
-                setSuccessMessage('Failed to create post.'); // Set error message
+                setSuccessMessage('Failed to create post.');
             }
             console.log(result);
         } catch (error) {
             console.error('Error:', error);
-            setSuccessMessage('An error occurred. Please try again.'); // Set error message
+            setSuccessMessage('An error occurred. Please try again.'); 
         }
     };
 
@@ -56,11 +56,11 @@ const Post = () => {
                     type="file"
                     accept="image/*" 
                     onChange={(e) => setImage(e.target.files[0])} 
-                    ref={fileInputRef} // Attach ref to the file input
+                    ref={fileInputRef} 
                 />
                 <button type="submit">Create Post</button>
             </form>
-            {successMessage && <p>{successMessage}</p>} {/* Display feedback message */}
+            {successMessage && <p>{successMessage}</p>} 
         </div>
     );
 };

@@ -5,7 +5,7 @@ import Login from './components/LoginLogout/Login';
 import Register from './components/LoginLogout/Register';
 import Profile from './components/Profile/Profile';
 import Logout from './components/LoginLogout/Logout';
-// import HomePage from './components/HomePage/HomePage'; // Assuming you have a HomePage component
+
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
 function Main() {
   const location = useLocation();
 
-  // Determine if the NavBar should be displayed based on the current route
+  
   const showNavBar = !['/', '/register'].includes(location.pathname);
 
   return (

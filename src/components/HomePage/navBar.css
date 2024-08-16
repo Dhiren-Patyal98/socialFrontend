@@ -1,0 +1,21 @@
+.nav-style {
+    width: 100%;
+    
+  }
+  
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar-nav {
+    margin: 0;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 15px; 
+  }
+  
+  .navbar-brand {
+    margin-right: auto;
+  }
+  
